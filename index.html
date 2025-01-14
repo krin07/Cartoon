@@ -15,9 +15,36 @@
         p {
             font-size: 24px; /* Set the font size for paragraphs */
         }
+        .welcome-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+        }
+        .welcome-screen button {
+            padding: 10px 20px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .main-content {
+            display: none;
     </style>
 </head>
 <body>
+     <div class="welcome-screen" id="welcomeScreen">
+        <h1>Welcome to Our Website</h1>
+        <button onclick="showMainContent()">BẤM NGAYYY</button>
+    </div>
+
+    <div class="main-content" id="mainContent">
     <h1>1. Mở đầu</h1>
     <p> Phim hoạt hình có thể nói là tuổi thơ của biết bao thế hệ chúng ta, chúng trong sáng, hồn nhiên và vui nhộn. Dưới đây sẽ là những thể loại phim hoạt hình mà bạn có thể không biết.</p>
 </body>
@@ -103,6 +130,14 @@ The Lion King hoàn toàn được tạo nên bởi công nghệ CGI  với nh�
   - Phong cách đồ họa sáng tạo, đa dạng và độc đáo.n cá nhân của Raven và Robin.  
   - Những trận chiến đầy kịch tính và sự hy sinh vì đồng đội. </p>
 </body>
+</div>
+
+<script>
+        function showMainContent() {
+            document.getElementById('welcomeScreen').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+    </script>
     <style>
         p {
             padding: 30px;
